@@ -13,14 +13,5 @@ return {
 			lsp_format = "fallback",
 		},
 		format_on_save = { timeout_ms = 300 },
-		-- formatters = {
-		--   shfmt = {
-		--     prepend_args = { "-i", "2" },
-		--   },
-		-- },
 	},
-	-- init = function()
-	--   -- If you want the formatexpr, here is the place to set it
-	--   vim.o.formatexpr = "v:lua.require'conform'.formatexpr()"
-	-- end,
 }

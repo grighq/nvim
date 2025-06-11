@@ -4,14 +4,16 @@ vim.lsp.enable({
 })
 
 vim.diagnostic.config({
-	virtual_lines = true,
-	-- virtual_text = true,
 	underline = true,
-	update_in_insert = false,
+	virtual_text = {
+		active = true,
+		prefix = "● ",
+	},
 	severity_sort = true,
+	update_in_insert = false,
 	float = {
-		border = "rounded",
 		source = true,
+		border = "rounded",
 	},
 	signs = {
 		text = {

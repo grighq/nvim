@@ -1,61 +1,43 @@
 return {
-  "saghen/blink.cmp",
-  dependencies = { "rafamadriz/friendly-snippets" },
-  version = "1.*",
+	"saghen/blink.cmp",
+	dependencies = { "rafamadriz/friendly-snippets" },
+	version = "1.*",
 
-  ---@module "blink.cmp"
-  ---@type blink.cmp.Config
-  opts = {
-    cmdline = { 
-      enabled = false,
-    },
-    keymap = { 
-      preset = "super-tab",
-    },
-    appearance = {
-      nerd_font_variant = "mono"
-    },
-    signature = { 
-      window = { border = 'single' } 
-    },
-    completion = { 
-      ghost_text = { 
-        enabled = true,
-      },
-      documentation = { 
-        auto_show = false,
-        window = { 
-          border = "rounded", 
-        }, 
-      },
-      menu = { 
-        border = "rounded",
-        -- draw = {
-        --   components = {
-        --     kind = {
-        --       highlight = function(ctx)
-        --         local _, hl, _ = require('mini.icons').get('lsp', ctx.kind)
-        --         return hl
-        --       end,
-        --     },
-        --     kind_icon = {
-        --       highlight = function(ctx)
-        --         local _, hl, _ = require('mini.icons').get('lsp', ctx.kind)
-        --         return hl
-        --       end,
-        --       text = function(ctx)
-        --         local kind_icon, _, _ = require('mini.icons').get('lsp', ctx.kind)
-        --         return kind_icon
-        --       end,
-        --     },
-        --   },
-        -- },
-      },
-    },
-    sources = {
-      default = { "lsp", "path", "snippets", "buffer" },
-    },
-    fuzzy = { implementation = "prefer_rust_with_warning" },
-  },
-  opts_extend = { "sources.default" }
+	---@module "blink.cmp"
+	---@type blink.cmp.Config
+	opts = {
+		cmdline = {
+			enabled = false,
+		},
+		keymap = {
+			preset = "none",
+			["<cr>"] = { "select_and_accept", "fallback" },
+
+			["<tab>"] = { "snippet_forward", "select_next", "fallback" },
+			["<s-tab>"] = { "snippet_backward", "select_prev", "fallback" },
+
+			["<c-b>"] = { "scroll_documentation_up", "fallback" },
+			["<c-f>"] = { "scroll_documentation_down", "fallback" },
+		},
+		completion = {
+			ghost_text = {
+				enabled = true,
+			},
+			documentation = {
+				auto_show = true,
+				window = {
+					border = "rounded",
+				},
+			},
+			menu = {
+				border = "rounded",
+				scrollbar = false,
+			},
+		},
+		sources = {
+			default = { "lsp", "path", "snippets", "buffer" },
+		},
+		fuzzy = { implementation = "prefer_rust_with_warning" },
+	},
+	opts_extend = { "sources.default" },
 }
