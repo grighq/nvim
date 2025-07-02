@@ -1,55 +1,48 @@
 local opt = vim.opt
 
-opt.mouse = ""
-opt.wrap = true
-opt.textwidth = 80
-opt.swapfile = false
-opt.clipboard = "unnamedplus"
-
-opt.tabstop = 2
-opt.shiftwidth = 2
-opt.expandtab = true
-opt.smarttab = false
-
+-- UI
 opt.number = true
 opt.winwidth = 10
 opt.cmdheight = 0
 opt.laststatus = 0
-opt.showtabline = 2
-opt.scrolloff = 999
+opt.showtabline = 0
 opt.winminwidth = 10
 opt.cursorline = true
 opt.termguicolors = true
 opt.signcolumn = "number"
 opt.shortmess:append("I")
+opt.fillchars = { eob = " " }
 
+-- EDITOR
+opt.mouse = ""
+opt.wrap = true
+opt.tabstop = 2
+opt.textwidth = 80
+opt.confirm = true
 opt.timeout = true
-opt.conceallevel = 3
-opt.updatetime = 200
+opt.shiftwidth = 2
+opt.undofile = true
+opt.scrolloff = 999
+opt.cindent = false
+opt.conceallevel = 0
+opt.swapfile = false
 opt.timeoutlen = 500
 opt.autowrite = true
-
-opt.confirm = true
-opt.undofile = true
-
-opt.splitbelow = true
-opt.splitright = true
-opt.equalalways = true
-
-opt.cindent = false
-opt.shiftround = true
-opt.autoindent = true
-opt.breakindent = true
-opt.smartindent = false
-
+opt.expandtab = true
+opt.smarttab = false
 opt.hlsearch = false
 opt.smartcase = true
+opt.shiftround = true
+opt.autoindent = true
 opt.ignorecase = true
-opt.grepprg = "rg --vimgrep"
-
-opt.list = false
-opt.showmode = false
+opt.splitbelow = true
+opt.splitright = true
+opt.breakindent = true
+opt.equalalways = true
+opt.smartindent = false
 opt.virtualedit = "block"
-opt.fillchars = { eob = " " }
+opt.grepprg = "rg --vimgrep"
+opt.clipboard = "unnamedplus"
 opt.formatoptions = "cjlnoqrt"
 opt.completeopt = { "menu", "menuone", "noselect", "noinsert" }
+opt.guicursor = "n-o-sm:block,v:block-blinkon500-blinkoff500,r-cr:hor20,i-c-ci-t:ver25"
